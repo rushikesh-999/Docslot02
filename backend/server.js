@@ -15,8 +15,19 @@ connectDB()
 connectCloudinary()
 
 //middlewares
-app.use(cors())
-app.use(express.json())
+const allowedOrigins = [
+  "http://localhost:5173",       // local frontend
+  "https://docslot02.vercel.app" // deployed frontend
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
+app.use(express.json());
+
 
 //api endpoints
 app.use('/api/admin', adminRouter)
