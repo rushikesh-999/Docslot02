@@ -15,11 +15,12 @@ connectCloudinary()
 
 //middlewares
 const allowedOrigins = [
-  "http://localhost:5173",        // local frontend
-  "http://localhost:5174",        // local admin
-  "https://docslot02.vercel.app", // deployed frontend
-  "https://<your-admin-url>"      // deployed admin (replace with real URL later)
+  "http://localhost:5173",
+  "http://localhost:5174",
+  "https://docslot02.vercel.app",
+  "https://docslot02-f99i.vercel.app"   // <--- your admin URL
 ]
+
 
 app.use(cors({
   origin: allowedOrigins,
